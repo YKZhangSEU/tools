@@ -1,4 +1,4 @@
-"""FLOPs and Params"""
+"""tf: FLOPs and Params"""
 def stats_graph(graph):
     flops = tf.profiler.profile(graph, options=tf.profiler.ProfileOptionBuilder.float_operation())
     params = tf.profiler.profile(graph, options=tf.profiler.ProfileOptionBuilder.trainable_variables_parameter())
@@ -6,3 +6,6 @@ def stats_graph(graph):
 
 calc_graph = tf.get_default_graph()
 stats_graph(calc_graph)
+
+"""matlab: write dicom file"""
+dicomwrite([],"file_name.dcm",Info,CreateMode="copy");
