@@ -1,2 +1,5 @@
 #压缩成多个文件
 tar czf - train.zip | split -b 6000m - train.tar.gz
+
+#解压多个文件
+cat train.tar.gz* | tar -xzv
